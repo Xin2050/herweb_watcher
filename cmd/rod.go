@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/Xin2050/web_overwatcher/config"
 	"github.com/Xin2050/web_overwatcher/pkg"
 	"github.com/go-rod/rod"
 	"math/rand"
@@ -16,10 +17,10 @@ var (
 )
 
 func main() {
-
+	serverConfig := config.New().Server
 	const url = "https://www.hermes.com/ca/en/category/women/bags-and-small-leather-goods/bags-and-clutches/#|"
 	page = rod.New().ControlURL(
-		"ws://127.0.0.1:9222/devtools/browser/736aa646-776a-41b0-b888-7e712448f28b",
+		serverConfig.Chrome,
 	).MustConnect().MustPage(url)
 	page.MustWaitLoad()
 

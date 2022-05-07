@@ -13,8 +13,13 @@ const (
 
 //Config is the main configuration struct
 type Config struct {
-	Tasks []Task `json:"tasks"`
-	Smtp  Smtp   `json:"smtp"`
+	Tasks  []Task `json:"tasks"`
+	Smtp   Smtp   `json:"smtp"`
+	Server Server `json:"server"`
+}
+
+type Server struct {
+	Chrome string `json:"chrome"`
 }
 
 //Task is a struct that contains the information for a task
