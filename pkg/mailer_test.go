@@ -2,19 +2,23 @@ package pkg
 
 import (
 	"github.com/stretchr/testify/assert"
+	"os"
 	"testing"
 )
 
 func init() {
 	//set test dir to project root
-
+	wd, err := os.Getwd()
+	if err != nil {
+		panic(err)
+	}
+	os.Chdir(wd + "/..")
 }
 func TestSendMail(t *testing.T) {
 
 	mail := &Mail{
-		From: "PMS ADMIN",
-		To:   []string{"leon.lee2050@gmail.com"},
-		//Cc:        []string{"6636101@qq.com"},
+		From:      "email test",
+		To:        []string{"leon.lee2050@gmail.com"},
 		Subject:   "This is Test subject",
 		PlainHtml: "<h1>This is title</h1> and done",
 	}

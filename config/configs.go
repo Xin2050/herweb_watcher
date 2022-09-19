@@ -13,7 +13,6 @@ const (
 
 //Config is the main configuration struct
 type Config struct {
-	Tasks  []Task `json:"tasks"`
 	Smtp   Smtp   `json:"smtp"`
 	Server Server `json:"server"`
 }
@@ -22,16 +21,6 @@ type Server struct {
 	Chrome string `json:"chrome"`
 }
 
-//Task is a struct that contains the information for a task
-type Task struct {
-	Name          string   `json:"name"`
-	Frequency     int      `json:"frequency"`
-	FrequencyUnit string   `json:"frequency_unit"`
-	Url           string   `json:"url"`
-	Css           string   `json:"css"`
-	Targets       []string `json:"targets"`
-	Emails        []string `json:"emails"`
-}
 type Smtp struct {
 	Host     string `json:"host"`
 	Port     int    `json:"port"`

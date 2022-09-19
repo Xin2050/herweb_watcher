@@ -1,0 +1,13 @@
+{
+  "server": {
+    "chrome": "ws://127.0.0.1:9222/devtools/browser/6a2a9afa-47ef-418e-8284-d27fb1ea717a"
+  },
+
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 465,
+    "secure": true,
+    "password": "#####",
+    "user": "emailaddress@gmail.com",
+  }
+}
